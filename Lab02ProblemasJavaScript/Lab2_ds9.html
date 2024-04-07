@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- Edgardo Salinas 3-98-920 1LS241-->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <p>
+        ¿Qué es Javascript y en qué se asemeja a Java?
+
+        JavaScript es un lenguaje de programación utilizado para crear y controlar contenido dinámico del sitio web
+        (es decir, cualquier cosa que se mueva, refresque o cambie en pantalla sin volver a cargar una página web).
+        Funciones de JavaScript:
+            Filas de diapositivas
+            Animaciones 
+            Autocompletar sugerencias de texto
+            Formularios interactivos
+        JavaScript permite que tu página web actualice tus datos de Facebook y Twitter en tiempo real.
+
+        La principal diferencia es:
+
+        Java es un lenguaje que hay que compilar.
+         Es necesario utilizar la JVM (Java Virtual Machine) para que el código pueda ser interpretado por la «máquina».
+
+         JavaScript es un lenguaje interpretado porque se lee y traduce directamente a medida que se ejecuta el programa. 
+
+    </p>
+
+    <h1>Punto 2: Variables Var</h1>
+
+     <script>
+
+        var num1 = 3;
+        var num2 = 6;
+        console.log("----------Punto2----------");
+        console.log("Suma:", num1 + num2);
+        console.log("Resta:", num1 - num2);
+        console.log("Multiplicación:", num1 * num2);
+        console.log("División:", num1 / num2);
+
+     </script>
+
+     <h1>Punto 3: Variables let</h1>
+
+     <script>
+        let wvariable1 = "Desarrollo";
+        let wvariable2 = " Software 9";
+        console.log("----------Punto3----------");
+        console.log(wvariable1 + " " + wvariable2);
+        
+     </script>
+
+    <h1>Punto 4: Palabra reservada const</h1>
+
+    <script>
+
+        const variable1 = "Lab2";
+        const variable2 = 2023;
+        console.log("----------Punto4----------");
+        console.log(typeof variable1);
+        console.log(typeof variable2);
+
+    </script>
+
+    <h1>Parte 5: Objeto</h1>
+
+    <script>
+        let miobjeto = {
+            minumero: 11,
+            micadena: "EselOnce",
+            mibooleano: true,
+            miobjetoInterno: {}
+          };
+        console.log("----------Punto5----------");
+        console.log(miobjeto.minumero);
+        console.log(miobjeto.micadena);
+        console.log(miobjeto.mibooleano);
+        console.log(miobjeto.miobjetoInterno);
+
+
+    </script>
+
+    <h1>Parte 6: Funcion JS</h1>
+     <h1>Ingrese un número:</h1>
+     <input type="number" id="numero" name="numero" placeholder="Ingrese un número" min="0" step="1" required>
+          <!-- <input type="number" id="numero"> -->
+          <button onclick="calcularResultado()">Calcular</button>
+          <p>El resultado es: <span id="resultado"></span></p>
+
+</body>
+
+</html>
+<script>
+
+    function calcularResultado() {
+        const numero = document.getElementById("numero").value;
+
+        let suma = 0;
+
+        for (let i = 1; i < numero; i++) {
+          if (i % 3 === 0 || i % 5 === 0) {
+            suma += i;
+          }
+        }
+      
+        document.getElementById("resultado").innerHTML = suma;
+      }
+      
+</script>
