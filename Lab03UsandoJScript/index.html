@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSIX Laboratorio No.3</title>
+    <script src="script.js"></script>
+    <style>
+        *{ font-family: Verdana, Geneva, Tahoma, sans-serif; }
+
+        body{
+            background-color: rgb(255, 250, 250);
+        }
+
+        h1{ text-align: center; }
+
+        .boton_someter{
+            display: flex;
+            border-radius: .3rem;
+            color: #004080;
+            background-color: #F0F8FF; 
+            font-weight: bold;
+            padding: .3rem 1rem;
+            cursor: pointer;
+            display: block;
+            text-align: center;
+            margin: 0 auto;
+            margin-top: 14px;
+        }
+
+
+        campo_input{
+            height: 1.2rem;
+            border-color: rgb(23, 116, 255);
+            border-radius: .3rem;
+        }
+        
+        
+        .labn3_seccion_problema{
+            background-color: rgb(235, 235, 235);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 15rem;
+            margin-top: 14px;
+        }
+
+        .labn3_resultado_del_problema{
+            font-weight: bold;
+            color: #006400;
+            text-align: center;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+
+
+    </style>
+</head>
+<body>
+    <h1>DSIX Laboratorio No.3 Usando JS</h1>
+        <div class="labn3">
+
+            <div class="labn3_seccion_problema">
+                <h2>Problema No.1</h2>
+                <p>Retorne si un número es un palíndromo de doble base o no lo es.</p>
+                <form id="problem1">
+                    <label for="txtPalindromo">Ingrese un número : </label>
+                    <input class="campo_input" id="txtPalindromo" type="text">
+                    <button class="boton_someter" type="submit">Enviar</button>
+                    <div class="labn3_resultado_del_problema" id="result-prob1"></div>
+                </form>
+            </div>
+
+            <div class="labn3_seccion_problema">
+                <h2>Problema No.2</h2>
+                <p>Una función que, dada una cadena "t", retorne la cantidad de caracteres de la cadena</p>
+                <form id="problem2">
+                    <label for="cadena_txt">Ingrese un texto : </label>
+                    <input class="campo_input" id="cadena_txt" type="text">
+                    <button class="boton_someter" type="submit">Enviar</button>
+                    <div class="labn3_resultado_del_problema" id="result-prob2"></div>
+                </form>
+            </div>
+
+            <div class="labn3_seccion_problema">
+                <h2>Problema No.3</h2>
+                <p>Dado un año "a", retorne si ese año es bisiesto o no</p>
+                <form id="problem3">
+                    <label for="anio">Ingrese un año (4 digitos YYYY) : </label>
+                    <input class="campo_input" id="anio" type="number">
+                    <button class="boton_someter" type="submit">Enviar</button>
+                    <div class="labn3_resultado_del_problema" id="result-prob3"></div>
+                </form>
+            </div>
+
+            <div class="labn3_seccion_problema">
+                <h2>Problema No.4</h2>
+                <p>Dado un número "n" ( 0 < n < 1000000), retorne la sumatoriatoria de todos los número esNumPrimos debajo de ese número</p>
+                <form id="problem4">
+                    <label for="numero_a_sumatoriarizar">Ingrese un número : </label>
+                    <input class="campo_input" id="numero_a_sumatoriarizar" type="number">
+                    <button class="boton_someter" type="submit">Enviar</button>
+                    <div class="labn3_resultado_del_problema" id="result-prob4"></div>
+                </form>
+            </div>
+        </div>
+    <script>
+
+        (() => {
+            const myfn_Lab03 = {
+                htmlElements : {
+                    form_problem1 : document.getElementById('problem1'),
+                    form_problem2 : document.getElementById('problem2'),
+                    form_problem3 : document.getElementById('problem3'),
+                    form_problem4 : document.getElementById('problem4')
+
+                },
+                // add event listener  to each form in the htmlElements object
+                init(){
+                    myfn_Lab03.htmlElements.form_problem1.addEventListener(
+                        'submit',
+                        myfn_Lab03.handlers.hndlr_problem1
+                    )
+                    myfn_Lab03.htmlElements.form_problem2.addEventListener(
+                        'submit',
+                        myfn_Lab03.handlers.hndlr_problem2
+                    )
+                    myfn_Lab03.htmlElements.form_problem3.addEventListener(
+                        'submit',
+                        myfn_Lab03.handlers.hndlr_problem3
+                    )
+                    myfn_Lab03.htmlElements.form_problem4.addEventListener(
+                        'submit',
+                        myfn_Lab03.handlers.hndlr_problem4
+                    )
+                    
+                },
+                // set handlers  of events here
+                handlers : {
+                    hndlr_problem1(event){
+                        event.preventDefault();
+                        const txtPalindromo = document.getElementById('txtPalindromo').value;
+                        const resultado_palindromo = myfn_Lab03.methods.evaluar_Palindromo(txtPalindromo);
+                        document.getElementById('result-prob1').innerHTML = resultado_palindromo;
+                    },
+                    hndlr_problem2(event){
+                        event.preventDefault();
+                        const cadena_txt = document.getElementById('cadena_txt').value;
+                        const resultado_contador_caracteres = myfn_Lab03.methods.cantidadaLetras(cadena_txt);
+                        document.getElementById('result-prob2').innerHTML = resultado_contador_caracteres;
+                    },
+                    hndlr_problem3(event){
+                        event.preventDefault();
+                        const anio = document.getElementById('anio').value;
+                        const resultado_es_bisiesto = myfn_Lab03.methods.anioBisiestoValidacion(anio);
+                        document.getElementById('result-prob3').innerHTML = resultado_es_bisiesto;
+                    },
+                    hndlr_problem4(event){
+                        event.preventDefault();
+                        const numero_a_sumatoriarizar = document.getElementById('numero_a_sumatoriarizar').value;
+                        const resultado_numero_sumatoriarizado = myfn_Lab03.methods.sumatoriaPrimos(numero_a_sumatoriarizar);
+                        document.getElementById('result-prob4').innerHTML = resultado_numero_sumatoriarizado;
+                    }
+                    
+                },
+                methods : {
+                    evaluar_Palindromo(txtPalindromo){
+                        // Problema palindromo #1
+                        let txtPalindromoingresado = '';
+                        txtPalindromoingresado = txtPalindromo;
+
+                        console.log(`Número ingresado: ${txtPalindromo}`);
+
+                        if (txtPalindromo === 0) {
+                            return '0';
+                        }
+
+                        const numInvertido = txtPalindromo.split('').reverse().join('');
+                        console.log(`Número invertido: ${numInvertido}`);
+
+                        let validacion_invertido = false;
+                        let validacion_numeroenbinario = false;
+                        let resultado_txt = '';
+
+                        if(txtPalindromo === numInvertido){
+                            console.log('En efecto es Palíndromo en decimal');
+                            validacion_invertido=true;
+                        } else{
+                            console.log('Falso : no es un Palindromo');
+                        }
+
+                        let numeroenbinario = '';
+                        // Convertir el número decimal a numeroenbinario
+                        numeroenbinario = decimal.toString(2);
+
+                        console.log(`Número numeroenbinario: ${numeroenbinario}`);
+
+                        let numBinarioInvertido = numeroenbinario.split('').reverse().join('');
+                        console.log(`Número numeroenbinario invertido: ${numBinarioInvertido}`); 
+
+                        if(numeroenbinario == numBinarioInvertido){
+                            console.log('En efecto es Palíndromo en numeroenbinario');
+                            validacion_numeroenbinario=true;
+                            resultado_txt = 'Sí es Palíndromo en numeroenbinario'
+                        } else{
+                            console.log('Falso: no es un Palindromo');
+                        }
+
+                        if (validacion_invertido  && validacion_numeroenbinario) {
+                            resultado_txt =  `El número ${txtPalindromoingresado} es un palíndromo en ambos sentidos`;
+                        }else{  resultado_txt =  `No es un palíndromo: ${txtPalindromoingresado}`};
+
+                        return resultado_txt
+                    },
+                    
+                    cantidadaLetras(cadena_txt){
+                        // Problema #2
+                        let resultado_txt ='';
+                        let contador = {};
+                        cadena_txt = cadena_txt.toLowerCase();
+
+                        // Crear un objeto para almacenar las repeticiones de cada carácter
+                        const contadorRepeticiones = {};
+
+                        // Iterar a través de cada carácter de la cadena
+                        for (let i = 0; i < cadena_txt.length; i++) {
+                            const caracterActual = cadena_txt[i];
+
+                            // Verificar si el carácter ya existe en el objeto contadorRepeticiones
+                            if (contadorRepeticiones[caracterActual]) {
+                            // Si existe, incrementar su valor
+                            contadorRepeticiones[caracterActual]++;
+                            } else {
+                            // Si no existe, inicializar su valor en 1
+                            contadorRepeticiones[caracterActual] = 1;
+                            }
+                        }
+
+                        // Crear un arreglo con los resultados
+                        const resultados = [];
+
+                        // Iterar sobre el objeto contadorRepeticiones y agregar los resultados al arreglo
+                        for (const [caracter, repeticiones] of Object.entries(contadorRepeticiones)) {
+                            resultados.push(`${caracter}=${repeticiones}, `);
+                        }
+                        console.log(resultados.sort());
+                        // Devolver los resultados como una cadena separada por saltos de línea
+                        return resultados.join('\n');
+
+                    },
+
+                    anioBisiestoValidacion(anio){
+                        // Problema #3
+                        if(anio <= 0){
+                            return 'El valor de año es invalido.  Es Cero o negativo.';
+                        }else if(((anio % 4 === 0 && anio % 100 !== 0) || anio % 400 === 0)){
+                            return `El año ${anio} es bisiesto`;
+                        } else{
+                            return `El año ${anio} NO es bisiesto`;
+                        }
+                    },
+
+                    sumatoriaPrimos(numero){
+                        // Validar que el número esté dentro del rango permitido
+                        console.log(numero)
+                        console.log(numero <= 0 || numero >= 1000000  )
+                        if (numero <= 0 || numero >= 1000000 ) {
+                          return `El número ingresado ${numero} no es válido. Debe ser un número entero entre 0 y 1000000.`;
+                        }
+                      
+                        // Función auxiliar para determinar si un número es primo
+                        function esPrimo(n) {
+                          if (n < 2) return false;
+                          if (n === 2 || n === 3) return true;
+                          if (n % 2 === 0 || n % 3 === 0) return false;
+                      
+                          let i = 5;
+                          const raiz = Math.sqrt(n);
+                          while (i <= raiz) {
+                            if (n % i === 0 || n % (i + 2) === 0) {
+                              return false;
+                            }
+                            i += 6;
+                          }
+                      
+                          return true;
+                        }
+                      
+                        // Inicializar la sumatoria
+                        let sumatoria = 0;
+                      
+                        // Iterar desde 2 hasta el número dado y sumar los números primos
+                        for (let j = 2; j < numero; j++) {
+                          console.log(`Número primo del ciclo a checar: ${j} ${(esPrimo(j))} `);
+                          if (esPrimo(j)) {
+                            sumatoria += j;
+                          }
+                        }
+                      
+                        return `La sumatoria de los números primos de ${numero} es ${sumatoria}`;
+                      }
+
+                }
+            }
+            myfn_Lab03.init();
+        }) ();
+        
+    </script>
+</body>
+</html>
