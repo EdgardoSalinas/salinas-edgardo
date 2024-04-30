@@ -63,15 +63,6 @@ label{
     gap: 2rem;
 }
 
-@media(max-width: 768px){
-    #card{
-        grid-template-columns: repeat(3,1fr);
-    }
-    .input-form{
-        width: 15rem;
-    }
-}
-
 
 #card:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
@@ -84,7 +75,6 @@ label{
     font-weight: bold;
     background-color: white;
     margin-right: 2rem;
-    border-radius: .5rem;
     padding: 0 1rem;
 }
 
@@ -102,15 +92,4 @@ label{
 
 }
 
-.footer{
-    text-align: center;
-    margin-top: 3rem;
-    font-style: italic;
-    font-size: 1.4rem;
-}
 
-.pos-foot{
-    display: flex;
-    justify-content: center;
-    align-content: end;
-}
