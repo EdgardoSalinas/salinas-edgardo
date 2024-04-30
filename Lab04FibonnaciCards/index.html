@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorio 4</title>
+    <link rel="stylesheet" href="css/styleLab4.css">
+</head>
+<body>
+
+
+    <main class="contenedor1">
+        <div class="fondo-forma">
+            <form id="formulariolab4" class="formulario">
+                <h1>Secuencia calc_fibonacci</h1>
+                <label class="cantelem" for="elementos">Cantidad de elementos:</label>
+                <input id="elementos" type="number" class="input-form">
+                <button class="btn-calcular" type="submit">Calcular</button>
+
+                <div id="tarjeta">
+                    <div class="contenedor-numero">
+                        <p id="resultado" class="num-fibo"></p>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+
+
+    <script>
+        (() => {
+            const fnlab4 = {
+                htmlElements : {
+                    problemaFormFibo : document.getElementById('formulariolab4'),
+                    entradaelementos : document.getElementById('elementos'),
+                    card : document.getElementById('tarjeta'),
+                    tarjetas : document.getElementsByClassName('tarjetas')
+                },
+                init(){
+                    fnlab4.htmlElements.problemaFormFibo.addEventListener(
+                        'submit', 
+                        fnlab4.handlers.formulariolab4
+                    );
+                    fnlab4.htmlElements.card.addEventListener(
+                        'click', 
+                        fnlab4.handlers.eliminartarjetadelresultado
+                    );
+                },
+                handlers: {
+                    formulariolab4(event) {
+                        event.preventDefault();
+                        const resultado = fnlab4.methods.tarjetasderesultados(fnlab4.htmlElements.entradaelementos.value);
+                        document.getElementById('resultado').innerHTML = resultado;
+                    },
+                    eliminartarjetadelresultado(event) {
+                        event.preventDefault();
+                        const index = Array.from(fnlab4.htmlElements.tarjetas).indexOf(event.target);
+                        fnlab4.methods.Eliminatarjetaenlista(index);
+                    }
+                },
+                methods: {
+                    tarjetasderesultados(numero) {
+                        let card = fnlab4.htmlElements.card;
+                        card.innerHTML = '';
+
+                        if (numero) {
+                            let calc_fibonacci = fnlab4.methods.calc_fibonacci(numero);
+
+                            calc_fibonacci.forEach(function (num) {
+                                let cardNumbers = document.createElement('div');
+                                cardNumbers.className = 'tarjetas';
+                                cardNumbers.textContent = num;
+                                card.appendChild(cardNumbers);
+                            });
+
+                            card.style.display = 'grid';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    },
+                    calc_fibonacci(numero) {
+                        let calc_fibonacci = [0, 1];
+
+                        while (calc_fibonacci[calc_fibonacci.length - 1] <= numero) {
+                            let siguienteNumero = calc_fibonacci[calc_fibonacci.length - 1] + calc_fibonacci[calc_fibonacci.length - 2];
+                            calc_fibonacci.push(siguienteNumero);
+                        }
+
+                        calc_fibonacci.pop();
+
+                        return calc_fibonacci;
+                    },
+                    Eliminatarjetaenlista(index) {
+                        fnlab4.htmlElements.tarjetas[index].remove();
+                    }
+                }
+            };
+            fnlab4.init();
+        }) ();
+    </script>
+</body>
+</html>
