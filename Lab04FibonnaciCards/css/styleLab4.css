@@ -8,7 +8,6 @@ html{
 }
 
 body{
-    font-family: Arial, Helvetica, sans-serif;
     background-color: white;
 }
 
@@ -17,25 +16,37 @@ body{
     margin: 0 auto;
 }
 
-h1{ 
-    text-align: left; 
-    margin-top: 1 rem;
-}
-
-.cantelem{
-    color: darkgray;
-}
-
-.formulario{
-    display: flex;
-    flex-direction: column; 
-    gap: 1.5rem;
-}
-
 .fondo-forma{
     background-color:gainsboro;
     padding: 5rem;
+    margin-top: 5rem;
+    font-family: 'Montserrat', sans-serif;
+    background-color:gainsboro;
+    padding: 1rem;
 }
+
+
+.formulario_lab4{
+    display: flex;
+    flex-direction: column; 
+
+}
+
+
+h1{ 
+    text-align: left; 
+    margin-top: 1 rem;
+    font-family: 'Montserrat', sans-serif;;
+    margin-bottom: 30px;
+}
+
+.lbl_cantelem{
+    font-size: 1.5rem;
+    color: gray;
+    margin-bottom: 1rem;
+
+}
+
 
 label{
     font-size: 2rem;
@@ -43,10 +54,10 @@ label{
 }
 
 .input-form{
-    width: 30rem;
-    border-radius: .5rem;
-    border: none;
-    height: 3rem;
+    margin-bottom: 2rem;
+    width: 22rem;
+    height: 2rem;
+    font-size: large;
 }
 
 #tarjeta {
@@ -64,32 +75,27 @@ label{
 }
 
 
-#card:hover {
+#tarjetas:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     cursor: pointer;
 }
 
 .tarjetas{
+    margin-right: 2rem;
+    padding: 0 1rem;
     font-size: 3rem;
     color: black;
     font-weight: bold;
     background-color: white;
-    margin-right: 2rem;
-    padding: 0 1rem;
+
 }
 
 .btn-calcular{
-    border: none;
-    color:white ;
+    align-self: flex-end;
+    width: 20rem;
+    color:gainsboro ;
     background-color: darkred;
-    padding: .3rem 1rem;
-    cursor: pointer;
-    font-weight: bold;
-    width: 10rem;
-    align-content: left;
-    display:flex;
-    justify-content: flex-end;
-
+    font-size: x-large;
 }
 
 

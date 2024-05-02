@@ -12,15 +12,15 @@
 
     <main class="contenedor1">
         <div class="fondo-forma">
-            <form id="formulariolab4" class="formulario">
+            <form id="formulariolab4" class="formulario_lab4">
                 <h1>Secuencia Fibonacci</h1>
-                <label class="cantelem" for="elementos">Cantidad de elementos:</label>
+                <label class="lbl_cantelem" for="elementos">Cantidad de elementos:</label>
                 <input id="elementos" type="number" class="input-form">
                 <button class="btn-calcular" type="submit">Calcular</button>
 
                 <div id="tarjeta">
-                    <div class="contenedor-numero">
-                        <p id="resultado" class="num-fibo"></p>
+                    <div>
+                        <p id="resultado"></p>
                     </div>
                 </div>
             </form>
@@ -60,15 +60,7 @@
                     }
                 },
                 methods: {
-                    calc_fibonacci(elementonumero) {
-                        let calc_fibonacci = [0, 1];
-                        while (calc_fibonacci[calc_fibonacci.length - 1] <= elementonumero) {
-                            let siguienteElemento = calc_fibonacci[calc_fibonacci.length - 1] + calc_fibonacci[calc_fibonacci.length - 2];
-                            calc_fibonacci.push(siguienteElemento);
-                        }
-                        calc_fibonacci.pop();
-                        return calc_fibonacci;
-                    },
+                   
                     Eliminatarjetaenlista(index) {
                         fnlab4.htmlElements.tarjetas[index].remove();
                     },
@@ -91,6 +83,15 @@
                         } else {
                             tarjetaresultado.style.display = 'none';
                         }
+                    },
+                    calc_fibonacci(elementonumero) {
+                        let calc_fibonacci = [0, 1];
+                        while (calc_fibonacci[calc_fibonacci.length - 1] <= elementonumero) {
+                            let siguienteElemento = calc_fibonacci[calc_fibonacci.length - 1] + calc_fibonacci[calc_fibonacci.length - 2];
+                            calc_fibonacci.push(siguienteElemento);
+                        }
+                        calc_fibonacci.pop();
+                        return calc_fibonacci;
                     },
 
                 }
