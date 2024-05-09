@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSIX Laboratorio 5</title>
+    <link rel="stylesheet" href="css/styleLab5.css">
+ 
+</head>
+<body>
+    
+    <form id="formalab5">
+
+        <h1>Laboratorio 5  Votacion</h1>
+
+        <section id="divtablacandidatos">
+            <h2>Tabla de Candidatos</h2>
+            <table id="tablacandidatos" class="tabla">
+                <tr class="fila">
+                    <th>Votar</th>
+                    <th>Borrar</th>
+                    <th>Nombre</th>
+                    <th>Color</th>
+                    <th>Votos</th>
+                    <th>Imagen</th>
+                </tr>
+            </table>
+        </section>
+
+        <section id="divinsertar" class="divinsertar">
+
+                <label for="nombre">Nombre Candidato:</label>
+                <input id="nombre" type="text">
+
+                <select id="color" title="Seleccione un color">
+                    <option value="">Selecciona un color</option>
+                </select>
+
+                <button type="button" id="btninsertar">Agregar Candidato</button>
+
+        </section>
+
+        <section id="divresultados">
+            <!-- <h2>Resultados</h2> -->
+        </section>
+ 
+
+    </form>
+
+    <script src="js/scriptlab5.js"></script>
+
+</body>
+</html>
