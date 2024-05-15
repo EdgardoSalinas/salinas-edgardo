@@ -1,0 +1,54 @@
+/* Global Styles */
+body {
+    font-family: 'Raleway', sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Header Styles */
+h1 {
+    color: #333;
+}
+
+/* Profile Image Styles */
+img {
+    border-radius: 50%;
+    margin-top: 20px;
+}
+
+/* Profile Information Styles */
+h2, p {
+    color: #666;
+}
+
+/* Button Styles */
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+a:hover {
+    text-decoration: underline;
+}
