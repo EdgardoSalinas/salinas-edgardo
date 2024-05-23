@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
+    <link rel="stylesheet" href="css/index.css">
+    <title>INCOME AND EXPENSE SYSTEM</title>
+</head>
+<body>
+    <header>
+        <nav id="navbar">
+            <div id="spannombreusuario">
+              <span id="usuariobienvenido">Bienvenido, [Nombre de Usuario]</span>
+            </div>
+            <ul id="navbaropciones">
+              <li><a href="perfil.html">Perfil</a></li>
+              <li>
+                <button id="btnLogout" type="submit">Cerrar Sesion</button>
+                <!-- <a 
+                    href="#" onclick="logout()">Cerrar sesión
+                </a> -->
+              </li>
+            </ul>
+        </nav>
+    </header>
+
+    <form id="indexForm">
+        <div id="divTabla">
+            <table id="tablaDetalle">
+                <thead>
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Descripción</th>
+                        <th>Monto</th>
+                        <th>Tipo</th>
+                        <th>Balance</th>
+                    </tr>
+                </thead>
+
+            </table>
+   
+        </div>
+        <div id="divBotones">
+
+            <a href="addrecord.html" target="_blank">
+                <button type="button">Agregar Transacción</button>
+            </a>
+
+            <!-- <button id="btnAdd" type="button">Agregar Transacción</button> -->
+            <!-- <button id="btnEdit" type="button">Editar Transacción</button>
+            <button id="btnDelete" type="button">Eliminar Transacción</button> -->
+
+        </div>
+        <div id="divgrafica">
+
+        </div>
+            
+    </form>
+
+    <script src=".\app.js"></script>
+  
+</body>
+
+</html>

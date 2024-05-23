@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/addrecord.css">
+    <title>Insertar Transacción</title>
+</head>
+<body>
+    <form id="formAdd">
+        <label for="fecha">Fecha de la transacción:</label>
+        <input type="date" id="fecha" name="fecha" required><br><br>
+      
+        <label for="descripcion">Descripción:</label>
+        <input type="text" id="descripcion" name="descripcion" required><br><br>
+      
+        <label for="monto">Monto en dólares:</label>
+        <input type="number" id="monto" name="monto" step="0.01" min="0" required><br><br>
+      
+        <label for="tipo">Tipo de transacción:</label>
+        <select id="tipo" name="tipo" required>
+          <option value="">Selecciona una opción</option>
+          <option value="1">Ingreso</option>
+          <option value="2">Egreso</option>
+        </select><br><br>
+      
+        <input id="btn-salvar" type="submit" value="Salvar">
+
+        <input id="btn-cancelar" type="submit" value="Regresar">
+
+    </form>
+    <script src=".\addrecord.js"></script>
+</body>
+</html>

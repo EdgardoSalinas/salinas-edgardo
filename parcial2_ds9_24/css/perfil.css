@@ -1,0 +1,76 @@
+/* Paleta de colores */
+:root {
+    --color-primario: #2C3E50;
+    --color-secundario: #34495E;
+    --color-acento: #3498DB;
+    --color-fondo: #F5F5F5;
+    --color-texto: #333333;
+  }
+  
+  /* Estilos generales */
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  h1 {
+    color: var(--color-primario);
+    margin-bottom: 30px;
+  }
+  
+  /* Estilos del formulario */
+  #formaprofile {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Estilos del contenedor del perfil */
+  #profileContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  
+  #profileContainer img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+  }
+  
+  #profileContainer p {
+    margin: 5px 0;
+  }
+  
+  /* Estilos de los botones */
+  button {
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: var(--color-acento);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: var(--color-secundario);
+  }
