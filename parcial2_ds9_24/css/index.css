@@ -23,14 +23,33 @@
     padding: 20px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: center; 
   }
+
+  #navbar {
+    display: flex;
+    justify-content: space-between;/* Distribuye los elementos a los extremos */
+    align-items: center; /*Centra verticalmente los elementos */
+}
   
   #spannombreusuario {
+    display: flex;
+    order: 1;
     font-weight: bold;
     font-size: 18px;
   }
   
+  #pyl {
+    display: flex;
+    order: 2;
+    justify-content: flex-end;
+    /*padding-left: 500px;*/
+    /*justify-content: flex-end;*/
+    /* justify-content: space-between;
+    align-items: center; */
+    
+  }
+
   #navbaropciones {
     list-style-type: none;
     display: flex;
@@ -38,12 +57,16 @@
     padding: 0;
   }
   
+  
   #navbaropciones li {
-    margin-left: 20px;
+    /* margin-left: 20px; */
+    display: inline-block; /* Para que los elementos estén en línea */
+    margin-left: 10px; /* Espaciado entre los elementos */
   }
   
   #navbaropciones a,
   #btnLogout {
+    display: flex;
     color: #fff;
     text-decoration: none;
     padding: 5px 10px;
@@ -51,6 +74,7 @@
     background-color: transparent;
     border: none;
     cursor: pointer;
+
   }
   
   #navbaropciones a:hover,

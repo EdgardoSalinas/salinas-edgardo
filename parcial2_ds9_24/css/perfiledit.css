@@ -76,3 +76,12 @@
   button:hover {
     background-color: var(--color-secundario);
   }
+
+  .mensaje-exitoso {
+    background-color: #4CAF50; /* Color de fondo verde */
+    color: white; /* Color del texto blanco */
+    padding: 10px 20px; /* Espaciado interno */
+    border-radius: 5px; /* Borde redondeado */
+    font-size: 12px; /* Tamaño de la fuente */
+    margin-top: 25px;
+  }

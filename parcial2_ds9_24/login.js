@@ -11,7 +11,7 @@
         loginForm: document.getElementById("loginForm"),
         username: document.getElementById("username"),
         password: document.getElementById("password"),
-        
+        btnRegistrarse: document.getElementById("btnregistrarse"),
       },
   
       init() {
@@ -21,6 +21,10 @@
   
       bindEvents() {
         App.htmlElements.loginForm.addEventListener("submit", App.handlers.onSubmit);
+        App.htmlElements.btnRegistrarse.addEventListener(
+            "click",
+            App.handlers.onClickRegistrarse,
+          );
       },
   
       handlers: {
@@ -28,12 +32,27 @@
           e.preventDefault();
           App.methods.redirigirAlPerfil();
         },
-  
+        onClickRegistrarse(e) {
+            e.preventDefault();
+            App.methods.registrarse();
+            //window.location.href = 'registro.html';
+          },
       },
   
       methods: {
+
+        registrarse() {
+            window.location.href = 'registro.html';
+        },
   
         checkLogin() {
+            // valida si existe usuarioNuevo para agregarlo a usuarios
+            if (localStorage.getItem('usuarioNuevo')) {
+                const usuarioNuevo = JSON.parse(localStorage.getItem('usuarioNuevo'));
+                usuarios.push(usuarioNuevo);
+                localStorage.removeItem('usuarioNuevo');
+            }
+            console.log(usuarios);
             // Obtener datos del usuario del almacenamiento local
             const usuarioAutenticado = JSON.parse(localStorage.getItem('usuarioAutenticado'));
   

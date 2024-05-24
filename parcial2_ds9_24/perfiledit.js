@@ -87,6 +87,7 @@
         userData.celular = App.htmlElements.celular.value;
         userData.pais = App.htmlElements.pais.value;
         localStorage.setItem('usuarioAutenticado', JSON.stringify(userData));
+        document.getElementById("divresultado").innerText = "Perfil modificado exitosamente";
       },
       
       hashCode(str) {

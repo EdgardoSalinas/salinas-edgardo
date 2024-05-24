@@ -11,38 +11,58 @@
       divGrafica: document.getElementById("divgrafica"),
       btnLogout: document.getElementById("btnLogout"),
       usuariobienvenido: document.getElementById("usuariobienvenido"),
+
     },
     init() {
       App.bindEvents();
       App.methods.checkSesionExiste();
     },
     bindEvents() {
+
       App.htmlElements.btnLogout.addEventListener(
         "click",
         App.handlers.onClickLogout,
       );
+
     },
     handlers: {
       onClickLogout() {
         App.methods.hacerLogout();
       },
+
+
+      onClickBorrar(event) {
+        event.preventDefault();
+        const fila = event.target.closest('tr')
+        App.methods.borrarReg(fila);
+        // obtener el valor en la primera celda = idrecord
+        //const idrecord = fila.querySelector('td').textContent;
+
+        
+        //fila.remove();
+        //console.log("¡El botón Votar fue clickeado!");
+      },
     },
     methods: {
 
-      checkSesionExiste() {
-          // Obtener datos del usuario del almacenamiento local
-          const usuarioAutenticado = JSON.parse(localStorage.getItem('usuarioAutenticado'));
-          if (!usuarioAutenticado) {
-                      // Redirigir a login.html si no hay usuario autenticado
-                      window.location.href = 'login.html';
-          } else {
-            App.htmlElements.usuariobienvenido.innerText=usuarioAutenticado.nombrecompleto;
-            const html = App.methods.tablaDetalle();
-            App.render('tablaDetalle',html);
-            App.methods.obtenerGrafica();
-
-          }       
+        borrarReg(fila) {
+          console.log(fila);
         },
+
+        checkSesionExiste() {
+            // Obtener datos del usuario del almacenamiento local
+            const usuarioAutenticado = JSON.parse(localStorage.getItem('usuarioAutenticado'));
+            if (!usuarioAutenticado) {
+                        // Redirigir a login.html si no hay usuario autenticado
+                        window.location.href = 'login.html';
+            } else {
+              App.htmlElements.usuariobienvenido.innerText=usuarioAutenticado.nombrecompleto;
+              const html = App.methods.tablaDetalle();
+              App.render('tablaDetalle',html);
+              App.methods.obtenerGrafica();
+
+            }       
+          },
 
         tablaDetalle() {
           // obtener datos del localstorage transacciones
@@ -56,7 +76,7 @@
           // HEADER
           // agregando el header en html a la tabla
           let filah = document.createElement('tr');
-          filah.innerHTML = `<th>Fecha</th><th>Descripción</th><th>Monto</th><th>Tipo</th><th>Balance</th>`;
+          filah.innerHTML = `<th>id</th><th>Fecha</th><th>Descripción</th><th>Tipo</th><th>Monto</th><th>Balance</th>`;
           tablaDet.appendChild(filah);
           // let fila = document.createElement('tr');
           // ['fecha', 'descripcion', 'tipo', 'monto', 'balance'].forEach(propiedad => {
@@ -71,7 +91,7 @@
             let fila = document.createElement('tr');
                
             // Crea una celda para cada propiedad y la agrega a la fila
-            ['fecha', 'descripcion', 'tipo', 'monto'].forEach(propiedad => {
+            ['widrecord','fecha', 'descripcion', 'tipo', 'monto'].forEach(propiedad => {
               let celda = document.createElement('td');
               celda.textContent = transaccion[propiedad];
               fila.appendChild(celda);
@@ -94,6 +114,14 @@
                 fila.appendChild(celda);
               } // propiedad === monto
             });  //forEach(propiedad 
+            // let celdaBtnBorrar = document.createElement('td');
+            // const btnborrar = document.createElement('button');
+            // btnborrar.id = "btn-borrar";
+            // btnborrar.textContent = "Borrar";
+            // btnborrar.classList.add("btn-borrar");
+            // btnborrar.addEventListener("click", App.handlers.onClickBorrar);
+            // celdaBtnBorrar.appendChild(btnborrar);
+            // fila.appendChild(celdaBtnBorrar);
 
             // Agrega la fila a la tabla
             tablaDet.appendChild(fila);
@@ -188,6 +216,9 @@
       },
       hacerLogout(){
         localStorage.removeItem("usuarioAutenticado");
+        localStorage.removeItem("transacciones");
+        localStorage.removeItem("idrecord");
+        
         window.location.href = "index.html";
       },
 
