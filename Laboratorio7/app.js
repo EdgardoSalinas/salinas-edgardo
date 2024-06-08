@@ -16,5 +16,5 @@ app.get('/fibonacci/', (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Servidor iniciado en http://localhost:${port}`);
+  console.log(`Servidor iniciado en http://localhost:${port} ejemplo http://localhost:3000/fibonacci/?n=10`);
 });

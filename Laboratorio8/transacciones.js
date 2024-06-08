@@ -17,13 +17,13 @@ let transacciones = [];
 
 // Ruta default
 app.get('/', (req, res) => {
-    res.send('Servidor de transacciones: 3000/transacciones y Servidor de egresos: 3001/egresos');
+    res.send('Servidor de transacciones: 3000/ingresos y Servidor de egresos: 3001/egresos');
   });
   
 
   
 // Ruta para manejar la solicitud POST
-app.post('/transacciones', (req, res) => {
+app.post('/ingresos', (req, res) => {
   const { fecha, descripcion, monto, tipo, id } = req.body;
 
   // Guardar la transacción en la variable
@@ -37,7 +37,13 @@ app.post('/transacciones', (req, res) => {
 
 // Iniciar el servidor
 app.listen(port, () => {
-  console.log(`Servidor de transacciones escuchando en http://localhost:${port}`);
+  console.log(`Servidor de transacciones escuchando en http://localhost:${port}/ingresos  {
+  "fecha": "2023-06-08",
+  "descripcion": "Compra en supermercado",
+  "monto": 50.75,
+  "tipo": 2,
+  "id": 1
+}`);
 });
 
 export default transacciones;

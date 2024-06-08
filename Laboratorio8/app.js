@@ -1,27 +1,34 @@
 import express from 'express';
-import bodyParser from 'body-parser';
+import cors from 'cors';
 
 const app = express();
 const port = 3001;
 
-// Middleware para analizar el cuerpo de la solicitud
-app.use(bodyParser.json());
+// Middleware para CORS
+app.use(cors());
 
-// Ruta para manejar la solicitud POST
-app.post('/ingresos', (req, res) => {
-  const { fecha, descripcion, monto, tipo, id } = req.body;
+// Variable para almacenar las transacciones (importada desde transacciones.js)
+import transacciones from './transacciones.js';
 
-  // Guardar los datos en el localStorage
-  const transaccion = { fecha, descripcion, monto, tipo, id };
-  const transacciones = JSON.parse(localStorage.getItem('transacciones')) || [];
-  transacciones.push(transaccion);
-  localStorage.setItem('transacciones', JSON.stringify(transacciones));
 
+// Ruta default
+app.get('/', (req, res) => {
+  res.send('Servidor de egresos: 3001/egresos Servidor de transaciones: 3000/transacciones');
+});
+
+
+
+// Ruta para obtener los egresos
+app.get('/egresos', (req, res) => {
+  // Filtrar las transacciones con tipo 2 (egresos)
+  //const egresos = transacciones.filter(transaccion => transaccion.tipo === 2);
+  // traer todas las transacciones
+  const egresos = transacciones;
   // Enviar la respuesta
-  res.status(201).json({ mensaje: 'Transacción guardada exitosamente' });
+  res.json(egresos);
 });
 
 // Iniciar el servidor
 app.listen(port, () => {
-  console.log(`Servidor escuchando en http://localhost:${port}`);
+  console.log(`Servidor de egresos escuchando en http://localhost:${port}/egresos`);
 });
