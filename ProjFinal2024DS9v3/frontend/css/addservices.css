@@ -1,0 +1,116 @@
+/* Variables de estilo */
+:root {
+    /* Formulario */
+    --form-max-width: 600px; /* Ancho máximo del formulario */
+    --form-padding: 20px; /* Relleno interno del formulario */
+    --form-border-color: #ccc; /* Color del borde del formulario */
+    --form-border-radius: 5px; /* Radio del borde del formulario */
+    --form-background-color: #f9f9f9; /* Color de fondo del formulario */
+    
+    /* Etiquetas */
+    --label-margin-top: 10px; /* Margen superior de las etiquetas */
+
+    /* Entradas de texto y otros campos */
+    --input-padding: 8px; /* Relleno interno de los campos de entrada */
+    --input-margin: 5px 0 10px 0; /* Margen de los campos de entrada */
+    --input-border-color: #ccc; /* Color del borde de los campos de entrada */
+    --input-border-radius: 4px; /* Radio del borde de los campos de entrada */
+    
+    /* Botones */
+    --button-padding: 10px 20px; /* Relleno interno de los botones */
+    --button-background-color: #4CAF50; /* Color de fondo de los botones */
+    --button-text-color: white; /* Color del texto de los botones */
+    --button-border-radius: 5px; /* Radio del borde de los botones */
+    --button-hover-background-color: #45a049; /* Color de fondo al pasar el ratón por encima del botón */
+    
+    /* Mensajes de error */
+    --error-message-color: red; /* Color del texto de los mensajes de error */
+    --error-border-color: red; /* Color del borde en caso de error */
+    
+    /* Notificaciones */
+    --notification-padding: 10px; /* Relleno interno de las notificaciones */
+    --notification-margin: 20px 0; /* Margen de las notificaciones */
+    --notification-border-radius: 5px; /* Radio del borde de las notificaciones */
+    --notification-text-align: center; /* Alineación del texto de las notificaciones */
+    --notification-success-background-color: #4CAF50; /* Color de fondo de las notificaciones de éxito */
+    --notification-success-text-color: white; /* Color del texto de las notificaciones de éxito */
+    --notification-error-background-color: #f44336; /* Color de fondo de las notificaciones de error */
+    --notification-error-text-color: white; /* Color del texto de las notificaciones de error */
+}
+
+/* Estilos para el formulario */
+form {
+    max-width: var(--form-max-width);
+    margin: 0 auto;
+    padding: var(--form-padding);
+    border: 1px solid var(--form-border-color);
+    border-radius: var(--form-border-radius);
+    background-color: var(--form-background-color);
+}
+
+h1 {
+    color: #1a73e8;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+label {
+    display: block;
+    margin-top: var(--label-margin-top);
+}
+
+input[type="text"],
+input[type="number"],
+input[type="time"],
+textarea,
+select {
+    width: 100%;
+    padding: var(--input-padding);
+    margin: var(--input-margin);
+    border: 1px solid var(--input-border-color);
+    border-radius: var(--input-border-radius);
+}
+
+input[type="file"] {
+    margin: var(--label-margin-top) 0;
+}
+
+button {
+    padding: var(--button-padding);
+    background-color: var(--button-background-color);
+    color: var(--button-text-color);
+    border: none;
+    border-radius: var(--button-border-radius);
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--button-hover-background-color);
+}
+
+.error-message {
+    color: var(--error-message-color);
+    display: none;
+}
+
+.error-border {
+    border-color: var(--error-border-color);
+}
+
+.notification {
+    display: none;
+    padding: var(--notification-padding);
+    margin: var(--notification-margin);
+    border-radius: var(--notification-border-radius);
+    text-align: var(--notification-text-align);
+}
+
+.notification.success {
+    background-color: var(--notification-success-background-color);
+    color: var(--notification-success-text-color);
+}
+
+.notification.error {
+    background-color: var(--notification-error-background-color);
+    color: var(--notification-error-text-color);
+}

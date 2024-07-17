@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/style.css"> 
+  <title>Inicio del Proveedor</title>
+</head>
+<body>
+  <nav>
+    <ul id="navbar">
+      <li id="nav-inicio"><a href="/inicio-proveedor">Inicio</a></li>
+      <li id="nav-agregar-servicio"><a href="/agregar-servicio">Agregar Nuevo Servicio</a></li>
+      <li id="nav-modificar-perfil"><a href="/modificar-perfil">Modificar Perfil</a></li>
+      <li id="nav-username"></li>
+      <li id="nav-logout"><a href="#" id="logout">Cerrar Sesión</a></li>
+    </ul>
+  </nav>
+
+  <div id="content">
+    <h1>Bienvenido, <span id="nav-username"></span></h1>
+    <div id="notification" class="notification"></div>
+    <table id="servicios-table">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Descripción</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody id="servicios-body">
+        <!-- Aquí se renderizarán los servicios -->
+      </tbody>
+    </table>
+  </div>
+
+  <script src="../js/inicioProveedor.js"></script>
+</body>
+</html>

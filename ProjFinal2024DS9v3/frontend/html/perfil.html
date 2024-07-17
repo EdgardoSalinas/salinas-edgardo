@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/perfil.css">
+  <title>Editar Perfil del Usuario</title>
+</head>
+<body>
+  <h1>Perfil del Usuario</h1>
+  <form id="profileForm" enctype="multipart/form-data">
+    <div class="photo-section">
+      <!-- <h2>Foto</h2> -->
+      <div class="photo-container">
+        <img  id="photoPreview" src="placeholder-image.png" alt="Foto de perfil" width="150" height="150">
+        <p>Subir Foto en formato PNG o JPG</p>
+        <button type="button" id="chooseImage">Seleccione imagen</button>
+        <button type="button" id="removeImage">Remover imagen</button>
+        <input type="file" id="photoInput" accept="image/*" style="display: none;">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="nombre">Nombre</label>
+      <input type="text" id="nombre" name="nombre" placeholder="Nombre">
+    </div>
+
+    <div class="form-group">
+      <label for="apellido">Apellido</label>
+      <input type="text" id="apellido" name="apellido" placeholder="Apellido">
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="Correo electronico">
+    </div>
+
+    <div class="form-group">
+      <label for="numerodecelular">Numero de Celular</label>
+      <input type="tel" id="numerodecelular"  name="numerodecelular" placeholder="Celular numero">
+    </div>
+
+    <div class="form-group">
+      <label for="direccion1">Direccion 1</label>
+      <input type="text" id="direccion1" name="direccion1" placeholder="Direccion1">
+      <label for="direccion2">Direccion 2</label>
+      <input type="text" id="direccion2" name="direccion2" placeholder="Direccion2">
+      <label for="direccion3">Direccion 3</label>
+      <input type="text" id="direccion3" name="direccion3" placeholder="Direccion3">
+    </div>
+
+    <div class="form-group">
+      <label for="acercademi">Acerca de Mi</label>
+      <textarea id="acercademi" name="acercademi" placeholder="Algo Acerca de Usted"></textarea>
+    </div>
+
+    <h2> Datos del Familiar Principal</h2>
+
+    <div class="form-group">
+      <label for="nombrecompletofamiliar">Nombre Completo Familiar</label>
+      <input type="text" id="nombrecompletofamiliar" name="nombrecompletofamiliar" placeholder="Nombre Completo">
+    </div>
+
+    <div class="form-group">
+      <label for="cedula">Cedula</label>
+      <input type="text" id="cedula" name="cedulafamiliar" placeholder="Nombre Completo">
+    </div>
+
+    <div class="form-group">
+      <label for="emailfamiliar">Email</label>
+      <input type="email" id="emailfamiliar" name="emailfamiliar" placeholder="Correo electronico">
+    </div>
+
+
+    <div class="form-group">
+      <label for="edadfamiliar">Edad Familiar</label>
+      <input type="text" id="edadfamiliar" name="edadfamiliar" placeholder="Edad Familiar">
+    </div>
+
+    <div class="form-group">
+      <label for="direccionfamiliar">Direccion1 del Familiar</label>
+      <input type="text" id="direccion1familiar" name="direccion1familiar" placeholder="Direccion1">
+      <input type="text" id="direccion2familiar" name="direccion2familiar" placeholder="Direccion2">
+      <input type="text" id="direccion3familiar" name="direccion3familiar" placeholder="Direccion3">
+    </div>
+
+    <div class="form-group">
+      <label for="celularfamiliar">Numero de Celular del familiar</label>
+      <input type="tel" id="celularfamiliar" name="celularfamiliar" placeholder="Celular numero">
+    </div>
+
+    <div class="form-group">
+      <label for="enfermedadesfamiliar">Enfermedades del familair</label>
+      <textarea id="enfermedadesfamiliar" name="enfermedadesfamiliar" placeholder="Lista enfermedades del familiar"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="acercadelfamiliar">Acerca del familair</label>
+      <textarea id="acercadelfamiliar" name="acercadelfamiliar" placeholder="Algo Acerca del familiar"></textarea>
+    </div>
+
+    <div class="form-actions">
+      <button type="button" id="cancelButton">Cerrar</button>
+      <button type="submit" id="saveButton">Salvar perfil</button>
+    </div>
+  </form>
+  <!-- <h1>Editar Perfil</h1>
+  <form id="formaprofileu" action="">
+    
+    <div id="profileContainer">
+
+    </div>
+
+    <button id="btnClose" type="submit">Cerrar</button>
+    <button id="btnEditar" type="submit">Editar</button>
+  </form> -->
+  <script type="module" src="..\js\perfil.js"></script>
+  <!-- <script src="perfil.js"></script> -->
+</body>
+</html>

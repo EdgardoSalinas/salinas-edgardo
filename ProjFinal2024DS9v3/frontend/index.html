@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/index.css">
+    <title>My Website</title>
+</head>
+<body>
+    <header>
+
+      <div id="navbar-placeholder"></div>
+        <!-- <nav id="navbar">
+            <div id="spannombreusuario">
+              <span id="usuariobienvenido">Bienvenido, [Nombre de Usuario]</span>
+            </div>
+            <div id="pyl">
+                <ul id="navbaropciones">
+                    <li>
+                      <button id="btnLogout" type="submit">Cerrar Sesion</button>
+                    </li>
+                </ul>
+            </div>
+       </nav> -->
+
+
+    </header>
+
+    <div class="container">
+      <div class="sidebar">
+          <ul>
+              <li><a href="#perfil">Perfil</a></li>
+              <li><a href="#servicios">Servicios Prov - Crear</a></li>
+              <li><a href="#serviciosupd">Servicios Prov - Actualizar</a></li>
+              <li><a href="#contratarServicios">Contratar Servicios</a></li>
+              <li><a href="#ordenes">Mis Ordenes</a></li>
+              <li><a href="#facturas">Mis Facturas</a></li>
+              <li><a href="#carrito">Carrito de Compra</a></li>
+              <li><a href="#admin">Admin</a></li>
+
+          </ul>
+      </div>
+
+      <div class="content">
+                          <!-- <form id="mainForm"> -->
+              <!-- Contenido principal -->
+              <section class="featuresd">
+                <div class="containerd">
+                  <h2>Características</h2>
+                  <p class="subtitle">Descubre las funciones que hacen que nuestra plataforma sea la mejor opción para conectar adultos mayores y familiares con proveedores de servicio.</p>
+              
+                  <div class="feature-cardsd">
+                    <div class="feature-cardd">
+                      <img src="static/homecare.jpg" alt="Cuidado y Compañía">
+                      <h3>Cuidado y Compañía</h3>
+                      <p>Encuentra cuidadores profesionales y compañía para adultos mayores.</p>
+                    </div>
+              
+                    <div class="feature-cardd">
+                      <img src="static/transport.jpg" alt="Transporte - Diligencias">
+                      <h3>Transporte y Diligencias</h3>
+                      <p>Realizamos su transporte y diligencias a la puerta de tu hogar.</p>
+                    </div>
+              
+                    <div class="feature-cardd">
+                      <img src="static/foodcare.jpg" alt="Preparación de comidas">
+                      <h3>Preparación de comidas</h3>
+                      <p>Disfruta de comidas caseras preparadas por chefs expertos.</p>
+                    </div>
+                  </div>
+              
+                  <div class="cta-buttonsd">
+                    <button class="btn btn-primary">Contratación de servicios con un solo clic</button>
+                    <button class="btn btn-secondary">Califica los servicios recibidos</button>
+                  </div>
+                </div>
+              </section>
+              
+          <!-- </form> -->
+      </div>
+
+
+
+  </div>
+
+  <!-- <form id="mainForm">
+  
+  </form> -->
+
+
+  <script>
+    fetch('html/navbarI.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('navbar-placeholder').innerHTML = data;
+        });
+
+  </script>
+  <script type="module" src=".\js\app.js"></script>
+  
+</body>
+
+</html>
+

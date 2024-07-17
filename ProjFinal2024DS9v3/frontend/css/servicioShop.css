@@ -1,0 +1,646 @@
+
+
+/* navbar*/
+ 
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f0f0f0;
+  padding: 10px 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.navbar-company-name {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #333;
+}
+
+.navbar-menu {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-menu li {
+  margin-left: 20px;
+}
+
+.navbar-menu li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar-menu li a:hover {
+  color: #007bff;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+      flex-direction: column;
+  }
+
+  .navbar-menu {
+      margin-top: 10px;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .navbar-menu li {
+      margin: 10px 0;
+  }
+}
+ 
+
+#spannombreusuario {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #333;
+  padding-left: 10;
+}
+
+#usuariobienvenido {
+  color: #2563EB;
+  margin-left: 10px;
+  
+
+}
+
+
+/* navbar :end */
+
+/*BODY*/
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+}
+
+.service-card {
+  display: flex;
+  background-color: #fff;
+  border-radius: 13px; /* Aumentado un 10% */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 100%; /* Aumentado un 10% desde 70% */
+  max-width: 836px; /* Aumentado un 10% desde 760px 836*/
+  margin: 0 0 22px 0; /* Aumentado el margen inferior un 10% */
+  align-self: flex-start; /* Alinea las tarjetas a la izquierda */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Alinea el contenido a la izquierda */
+  gap: 33px; /* Aumentado un 10% */
+  padding: 22px; /* Aumentado un 10% */
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.service-content {
+  padding: 16.5px; /* Aumentado un 10% */
+  flex: 1;
+  background-color: #E8F8FF;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Alinea el contenido a la izquierda */
+}
+
+.service-content h2 {
+  font-size: 22px; /* Aumentado un 10% */
+  margin: 0 0 11px; /* Aumentado un 10% */
+  color: #333;
+}
+
+.service-content p {
+  margin: 12.2px 0; /* Aumentado un 10% 2.2*/
+  font-size: 17.4px; /* Aumentado un 10% */
+  line-height: 1.54; /* Aumentado un 10% */
+}
+
+.service-price {
+  font-size: 19.8px; /* Aumentado un 10% */
+  font-weight: bold;
+  margin-top: 11px; /* Aumentado un 10% */
+  color: #007BFF;
+}
+
+.appointment-button {
+  align-self: flex-start;
+  margin-top: 13.2px; /* Aumentado un 10% */
+  padding: 8.8px 17.6px; /* Aumentado un 10% */
+  font-size: 15.4px; /* Aumentado un 10% */
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 4.4px; /* Aumentado un 10% */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.service-image {
+  width: 60%; /* Aumentado un 10% */
+  min-width: 110px; /* Aumentado un 10% */
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Estilos para el botón de cierre */
+#closeButton {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+#closeButton:hover {
+  background-color: #d32f2f;
+}
+
+/* ... (resto del CSS sin cambios) ... */
+
+
+/* version anterior */
+
+/* Estilos para los campos específicos */
+.service-content .field {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 4px;
+}
+
+.service-content .field-label {
+  font-weight: bold;
+  margin-right: 10px;
+  color: #555;
+}
+
+.service-content .field-value-h {
+  font-size: 16px; /* Aumentado un 10% */
+  font-weight: bold;
+  text-align: left;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.service-content .field-value {
+  text-align: left;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .service-card {
+    width: 90%;
+    flex-direction: column;
+  }
+
+  .service-image {
+    width: 100%;
+    height: 200px;
+  }
+
+  .service-content {
+    width: 100%;
+  }
+}
+
+
+/* Estilos para el modal */
+
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #f8f9fa;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 600px;
+  position: relative;
+}
+
+.close {
+  color: #aaa;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close:hover,
+.close:focus {
+  color: #333;
+  text-decoration: none;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+input[type="date"],
+input[type="time"],
+input[type="text"],
+input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.submit-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #0056b3;
+}
+
+
+
+
+.page-container {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.service-container {
+  flex: 2;
+  padding: 20px;
+}
+
+.order-container {
+  flex: 1;
+  padding: 20px;
+  background-color: #f0f0f0;
+  border-left: 1px solid #ddd;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 5px 10px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.close-button:hover {
+  background-color: #d32f2f;
+}
+
+.order-item {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.order-item button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.order-item button:hover {
+  background-color: #45a049;
+}
+
+
+
+
+
+/* paypal */
+/* paypal-modal */
+.paypal-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.paypal-modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 500px;
+}
+
+.paypal-close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.paypal-close:hover,
+.paypal-close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+
+
+
+/* ... (estilos existentes) ... */
+
+
+
+
+/* 
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+}
+
+
+.service-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+}
+
+.service-card {
+  display: flex;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 100%;
+  max-width: 800px;
+  margin: 20px;
+}
+
+.service-content {
+  padding: 20px;
+  flex: 1;
+  background-color: #E8F8FF;
+}
+
+.service-content h2 {
+  font-size: 24px;
+  margin: 0 0 10px;
+}
+
+.service-content p {
+  margin: 5px 0;
+}
+
+.service-price {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 20px;
+  color: #007BFF;
+}
+
+.appointment-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.appointment-button:hover {
+  background-color: #555;
+}
+
+.service-image {
+  width: 40%;
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.service-image::before {
+  content: "";
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  background-color: #ddd;
+  border-radius: 50%;
+}
+
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #f8f9fa;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 600px;
+  position: relative;
+}
+
+.close {
+  color: #aaa;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close:hover,
+.close:focus {
+  color: #333;
+  text-decoration: none;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+input[type="date"],
+input[type="time"],
+input[type="text"],
+input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.submit-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #0056b3;
+}
+*/
+
+/* Responsive design */
+
+/* @media (max-width: 768px) {
+  .modal-content {
+    width: 95%;
+    padding: 20px;
+  }
+} */
+
+
+/* paginacion */
+/* .pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+} */
+
+/* .pagination button {
+  padding: 10px 20px;
+  margin: 0 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pagination button:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+.pagination button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.pagination span {
+  font-size: 18px;
+  margin: 0 10px;
+} */
+ 

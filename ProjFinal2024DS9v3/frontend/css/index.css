@@ -1,0 +1,293 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+/* navbar*/
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f8f9fa;
+  padding: 10px 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.navbar-company-name {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #333;
+}
+
+.navbar-menu {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-menu li {
+  margin-left: 20px;
+}
+
+.navbar-menu li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar-menu li a:hover {
+  color: #007bff;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+      flex-direction: column;
+  }
+
+  .navbar-menu {
+      margin-top: 10px;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .navbar-menu li {
+      margin: 10px 0;
+  }
+}
+
+
+/* contenido */
+
+.featuresd {
+    padding: 60px 0;
+    background-color: #f8f9fa;
+  }
+  
+  .containerd {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  h2d {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .subtitled {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    color: #666;
+  }
+  
+  .feature-cardsd {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 40px;
+  }
+  
+  .feature-cardd {
+    flex: 1;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .feature-cardd img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .feature-cardd h3 {
+    font-size: 24px;
+    padding: 20px 20px 10px;
+  }
+  
+  .feature-cardd p {
+    padding: 0 20px 20px;
+    color: #666;
+  }
+  
+  .cta-buttonsd {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .btnd {
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .btn-primaryd {
+    background-color: #b35900;
+    color: #fff;
+    border: none;
+  }
+  
+  .btn-primaryd:hover {
+    background-color: #994d00;
+  }
+  
+  .btn-secondaryd {
+    background-color: #fff;
+    color: #b35900;
+    border: 2px solid #b35900;
+  }
+  
+  .btn-secondaryd:hover {
+    background-color: #fff3e6;
+  }
+  
+  @media (max-width: 768px) {
+    .feature-cardsd {
+      flex-direction: column;
+    }
+  
+    .cta-buttonsd {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  
+
+/* menu lateral */
+.container {
+    display: flex;
+}
+
+.sidebar {
+    width: 200px;
+    background-color: #f1f1f1;
+    padding: 20px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+}
+
+/* menu lateral */
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #F5F7FA;
+    color: #333;
+}
+
+header {
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#spannombreusuario {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #333;
+}
+
+#usuariobienvenido {
+    color: #2563EB;
+}
+
+#navbaropciones {
+    list-style-type: none;
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+}
+
+#navbaropciones li {
+    display: inline;
+}
+
+button {
+    background-color: #2563EB;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #1D4ED8;
+}
+
+#btnLogout {
+    background-color: #DC2626;
+}
+
+#btnLogout:hover {
+    background-color: #B91C1C;
+}
+
+#mainForm {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #FFFFFF;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 768px) {
+    #navbar {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    #navbaropciones {
+        width: 100%;
+        justify-content: center;
+    }
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD </title>
+    <link rel="stylesheet" href="../css/crudmodel.css">
+</head>
+<body>
+    <div class="container">
+        <h1>CRUD Interface</h1>
+
+        <div class="crud-section">
+            <h2>Orden de Servicio</h2>
+            <form id="ordenForm">
+                <input type="text" id="usuario" placeholder="Usuario" required>
+                <input type="text" id="idDelServicio" placeholder="ID del Servicio" required>
+                <input type="text" id="usuarioDelProveedor" placeholder="Usuario del Proveedor" required>
+                <input type="number" id="cantidad" placeholder="Cantidad (horas)" required>
+                <input type="number" id="precio" placeholder="Precio" required>
+                <textarea id="descripcion" placeholder="Descripción" required></textarea>
+                <button type="submit">Crear Orden</button>
+            </form>
+            <div id="ordenList"></div>
+        </div>
+
+        <div class="crud-section">
+            <h2>Servicio</h2>
+            <form id="servicioForm">
+                <input type="text" id="tipoServicio" placeholder="Tipo de Servicio" required>
+                <input type="text" id="usuarioproveedor" placeholder="Usuario Proveedor" required>
+                <input type="text" id="nombre" placeholder="Nombre" required>
+                <textarea id="servicioDescripcion" placeholder="Descripción" required></textarea>
+                <input type="text" id="amenidades" placeholder="Amenidades" required>
+                <input type="text" id="diasSemana" placeholder="Días de la Semana (separados por coma)" required>
+                <input type="text" id="horarioDesde" placeholder="Horario Desde" required>
+                <input type="text" id="horarioHasta" placeholder="Horario Hasta" required>
+                <input type="number" id="precioHora" placeholder="Precio por Hora" required>
+                <button type="submit">Crear Servicio</button>
+            </form>
+            <div id="servicioList"></div>
+        </div>
+
+        <div class="crud-section">
+            <h2>Usuario</h2>
+            <form id="userForm">
+                <input type="text" id="userUsuario" placeholder="Usuario" required>
+                <select id="tipodeusuario" required>
+                    <option value="usuario">Usuario</option>
+                    <option value="proveedor">Proveedor</option>
+                </select>
+                <input type="text" id="userNombre" placeholder="Nombre" required>
+                <input type="text" id="apellido" placeholder="Apellido" required>
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="password" id="contrasena" placeholder="Contraseña" required>
+                <input type="text" id="numerodecelular" placeholder="Número de Celular" required>
+                <textarea id="acercademi" placeholder="Acerca de mí"></textarea>
+                <button type="submit">Crear Usuario</button>
+            </form>
+            <div id="userList"></div>
+        </div>
+    </div>
+
+    <script type="module" src=".\js\crudmodel.js"></script>
+
+</body>
+</html>

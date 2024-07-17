@@ -1,0 +1,158 @@
+/* const express = require('express');
+const router = express.Router();
+const Familiar = require('../models/modelFamiliar');
+const bcrypt = require('bcrypt'); // For password hashing
+const jwt = require('jsonwebtoken');
+const { authenticateToken, validateUserType, authAndValidateUserType } = require('./authMiddleware');
+//const { validateUserType } = require('./authMiddleware');
+
+const multer = require('multer');
+const path = require('path');
+
+// Secret key for JWT (store this securely, preferably in an environment variable)
+const JWT_SECRET = process.env.JWT_SECRET || 'llavesecreta';
+
+
+// Configuración de multer para manejar la subida de archivos
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, '../uploads/') // Asegúrate de que este directorio exista
+  },
+  filename: function (req, file, cb) {
+    cb(null, Date.now() + path.extname(file.originalname)) // Añade la extensión original del archivo
+  }
+});
+
+const upload = multer({ storage: storage });
+//const upload = multer({ dest: 'uploads/' }); // Guarda los archivos en el director
+
+
+// para insertar el usuario en mongo
+router.post('/registerfamiliar', async (req, res) => {
+  try {
+
+    const usuariosesion = req.User.usuario;
+
+    // Create a new user with the hashed password
+
+    const familiarData = {
+      usuario: usuariosesion,
+      nombre: req.body.nombrecompleto,
+      email: req.body.email,
+      cedula: req.body.cedula,
+      edad: req.body.edad,
+      direccion1: req.body.direccion1-familiar,
+      direccion2: req.body.direccion2-familiar,
+      direccion3: req.body.direccion3-familiar,
+      numerodecelular: req.body.celularfamiliar,
+      acerdadelfamiliar: req.body.enfermedadesfamiliar,
+      acercadelfamiliar: req.body.acerdadelfamiliar
+    };
+
+    const newFamiliar = new Familiar({
+      familiarData
+    });
+
+
+    // Save the user to the database
+    await newFamiliar.save();
+
+    // Respond with success message (don't include the password in the response)
+    res.status(201).json({ 
+      message: 'Familiar created successfully', 
+      familiarId: newFamiliar._id
+    });
+
+  } catch (error) {
+    // Handle specific errors
+    if (error.code === 11000) {
+      // Duplicate key error (e.g., username or email already exists)
+      return res.status(409).json({ message: 'User already exists' });
+    }
+
+    // Generic error handling
+    console.error('Error registering user:', error);
+    res.status(400).json({ message: 'Error creating user', error: error.message });
+  }
+});
+
+
+
+// Ruta para actualizar el perfil del usuario
+router.post('/familiarupdate', authenticateToken, upload.single('photo'), async (req, res) => {
+  try {
+    const userId = req.user.userId; // Asumiendo que tu middleware de autenticación añade el userId al objeto req.user
+    // enviar a console el body 
+    console.log(req.body);
+    // Prepara los datos a actualizar
+    const updateData = {
+      nombre: req.body.nombre,
+      apellido: req.body.apellido,
+      email: req.body.email,
+      numerodecelular: req.body.numerodecelular,
+      direccion1: req.body.direccion1,
+      direccion2: req.body.direccion2,
+      direccion3: req.body.direccion3,
+      acercademi: req.body.acercademi,
+      familiar: {
+        nombreCompleto: req.body.nombreFamiliar,
+        edad: req.body.edadFamiliar,
+        direccion: {
+          direccion1: req.body.direccionFamiliar1,
+          direccion2: req.body.direccionFamiliar2,
+          direccion3: req.body.direccionFamiliar3
+        },
+        celular: req.body.celularFamiliar,
+        enfermedades: req.body.enfermedadesFamiliar
+      }
+    };
+    // se envia a la consola el contenido de updateData
+    console.log("contenido de updateData a continuacion");
+    console.log(updateData);
+    // Si se subió una nueva foto, añade la ruta al objeto de actualización
+    if (req.file) {
+      updateData.photoUrl = `../uploads/${req.file.filename}`;
+    }
+
+    // Actualiza el usuario en la base de datos
+    const updatedUser = await User.findByIdAndUpdate(userId, updateData, { new: true, runValidators: true });
+
+    if (!updatedUser) {
+      return res.status(404).json({ message: 'Usuario no encontrado' });
+    }
+
+    res.json({ message: 'Perfil actualizado con éxito', user: updatedUser });
+  } catch (error) {
+    console.error('Error al actualizar el perfil:', error);
+    res.status(500).json({ message: 'Error al actualizar el perfil', error: error.message });
+  }
+});
+
+
+
+router.get('/validate-token', (req, res) => {
+  const authHeader = req.headers['authorization'];
+  const token = authHeader && authHeader.split(' ')[1];
+
+  if (!token) {
+    return res.status(401).json({ isValid: false, message: 'No token provided' });
+  }
+
+  jwt.verify(token, JWT_SECRET, (err, decoded) => {
+    if (err) {
+      console.error('Token verification error:', err);
+      return res.status(403).json({ isValid: false, message: 'Invalid token' });
+    }
+
+    // Opcionalmente, puedes realizar verificaciones adicionales aquí
+    // Por ejemplo, comprobar si el usuario aún existe en la base de datos
+
+    res.json({ isValid: true, message: 'Token is valid', userId: decoded.userId });
+  });
+});
+
+
+
+module.exports = router;
+
+ */

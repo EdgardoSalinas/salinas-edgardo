@@ -1,0 +1,91 @@
+/* Variables de colores */
+:root {
+  --primary-color: #3498db; /* Color primario */
+  --secondary-color: #2ecc71; /* Color secundario */
+  --danger-color: #e74c3c; /* Color de peligro */
+  --button-hover-opacity: 0.8; /* Opacidad al pasar el ratón por encima de los botones */
+}
+
+/* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilos para la navegación */
+nav {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 10px 20px;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Estilos para el contenido principal */
+main {
+  padding: 20px;
+}
+
+h1 {
+  color: var(--primary-color);
+}
+
+/* Estilos para la tabla de servicios */
+#servicios-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+#servicios-table th, #servicios-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+#servicios-table th {
+  background-color: #f2f2f2;
+}
+
+/* Estilos para los botones */
+#servicios-table button {
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+#servicios-table button.editar {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+#servicios-table button.eliminar {
+  background-color: var(--danger-color);
+  color: white;
+}
+
+#servicios-table button:hover {
+  opacity: var(--button-hover-opacity);
+}

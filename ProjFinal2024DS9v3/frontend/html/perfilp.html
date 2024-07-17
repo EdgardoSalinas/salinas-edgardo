@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/perfil.css">
+  <title>Editar Perfil del Usuario</title>
+</head>
+<body>
+  <h1>Perfil del Proveedor</h1>
+  <form id="profileForm" enctype="multipart/form-data">
+    <div class="photo-section">
+      <!-- <h2>Foto</h2> -->
+      <div class="photo-container">
+        <img  id="photoPreview" src="placeholder-image.png" alt="Foto de perfil" width="150" height="150">
+        <p>Subir Foto en formato PNG o JPG</p>
+        <button type="button" id="chooseImage">Seleccione imagen</button>
+        <button type="button" id="removeImage">Remover imagen</button>
+        <input type="file" id="photoInput" accept="image/*" style="display: none;">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="nombre">Nombre</label>
+      <input type="text" id="nombre" name="nombre" placeholder="Nombre">
+    </div>
+
+    <div class="form-group">
+      <label for="apellido">Apellido</label>
+      <input type="text" id="apellido" name="apellido" placeholder="Apellido">
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="Correo electronico">
+    </div>
+
+    <div class="form-group">
+      <label for="numerodecelular">Numero de Celular</label>
+      <input type="tel" id="numerodecelular"  name="numerodecelular" placeholder="Celular numero">
+    </div>
+
+    <div class="form-group">
+      <label for="direccion1">Direccion 1</label>
+      <input type="text" id="direccion1" name="direccion1" placeholder="Direccion1">
+      <label for="direccion2">Direccion 2</label>
+      <input type="text" id="direccion2" name="direccion2" placeholder="Direccion2">
+      <label for="direccion3">Direccion 3</label>
+      <input type="text" id="direccion3" name="direccion3" placeholder="Direccion3">
+    </div>
+
+    <div class="form-group">
+      <label for="cedula">Cedula</label>
+      <input type="text" id="cedula" name="cedula" placeholder="Cedula">
+    </div>
+
+    <div class="form-group">
+      <label for="ruc">RUC</label>
+      <input type="text" id="ruc" name="ruc" placeholder="RUC">
+    </div>
+
+    <div class="form-group">
+      <label for="placavehiculo">Placa Vehículo</label>
+      <input type="text" id="placavehiculo" name="placavehiculo" placeholder="Placa Vehículo">
+    </div>
+
+    <div class="form-group">
+      <label for="generalesdelvehiculo">Generales del Vehículo</label>
+      <textarea id="generalesdelvehiculo" name="generalesdelvehiculo" placeholder="Generales del Vehículo"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="referenciapersonalnombrecompleto">Referencia Personal Nombre Completo</label>
+      <input type="text" id="referenciapersonalnombrecompleto" name="referenciapersonalnombrecompleto" placeholder="Referencia Personal Nombre Completo">
+    </div>
+
+    <div class="form-group">
+      <label for="referenciapersonalcelular">Referencia Personal Celular</label>
+      <input type="text" id="referenciapersonalcelular" name="referenciapersonalcelular" placeholder="Referencia Personal Celular">
+    </div>
+
+
+    <div class="form-group">
+      <label for="acercademi">Acerca de Mi</label>
+      <textarea id="acercademi" name="acercademi" placeholder="Algo Acerca de Usted"></textarea>
+    </div>
+    
+    <div class="form-actions">
+      <button type="button" id="cancelButton">Cerrar</button>
+      <button type="submit" id="saveButton">Salvar perfil</button>
+    </div>
+
+  </form>
+  <!-- <h1>Editar Perfil</h1>
+  <form id="formaprofileu" action="">
+    
+    <div id="profileContainer">
+
+    </div>
+
+    <button id="btnClose" type="submit">Cerrar</button>
+    <button id="btnEditar" type="submit">Editar</button>
+  </form> -->
+  <script type="module" src="..\js\perfil.js"></script>
+  <!-- <script src="perfil.js"></script> -->
+</body>
+</html>

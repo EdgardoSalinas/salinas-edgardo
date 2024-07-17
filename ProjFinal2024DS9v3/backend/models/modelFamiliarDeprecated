@@ -1,0 +1,20 @@
+// In your user model file (e.g., models/User.js)
+const mongoose = require('mongoose');
+
+const familiarSchema = new mongoose.Schema({
+  usuario: { type: String, required: true, unique: true },
+  photoUrl: String,
+  nombrecompleto: String,
+  cedula: String, 
+  edad: Number,
+  direccion1: String,
+  direccion2: String,
+  direccion3: String,
+  email: String,
+  numerodecelular: String,
+  enfermedadesfamiliar: String,
+  acercadelfamiliar: String,
+  fechaRegistro: { type: Date, default: Date.now }
+});
+
+module.exports = mongoose.model('Familiar', familiarSchema);

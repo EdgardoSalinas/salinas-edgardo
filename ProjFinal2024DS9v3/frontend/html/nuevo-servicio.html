@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Nuevo Servicio</title>
+    <link rel="stylesheet" href="../css/addservices.css">
+</head>
+<body>
+    <h1>Agregar Nuevo Servicio</h1>
+    <form id="formularioServicio">
+
+                <!-- IMAGENES POR URL  -->
+                <div class="photo-section">
+                    <!-- <h2>Foto</h2> -->
+                    <div class="photo-container">
+                      <img  id="photoPreview" src="placeholder-image.png" alt="Foto de perfil" width="150" height="150">
+                      <p>Subir Foto en formato PNG o JPG</p>
+                      <button type="button" id="chooseImage">Seleccione imagen</button>
+                      <button type="button" id="removeImage">Remover imagen</button>
+                      <input type="file" id="photoInput" accept="image/*" style="display: none;">
+                    </div>
+                </div>
+        
+
+        <label for="tipoServicio">Tipo de Servicio:</label>
+        <select id="tipoServicio" name="tipoServicio">
+            <option value="">Seleccione una opción</option>
+            <option value="tipo1">1.Cuidado en el hogar</option>
+            <option value="tipo2">2.Compras Varias (super, medicinas )</option>
+            <option value="tipo3">3.Ayuda en el hogar</option>
+            <option value="tipo4">4.Transporte y acompañamiento</option>
+            <!-- Agrega más opciones según sea necesario -->
+        </select>
+        <span id="tipoServicioError" class="error-message">Campo requerido</span>
+
+        <label for="nombre">Nombre del Servicio:</label>
+        <input type="text" id="nombre" name="nombre">
+        <span id="nombreError" class="error-message">Campo requerido</span>
+
+        <label for="descripcion">Descripción:</label>
+        <textarea id="descripcion" name="descripcion"></textarea>
+        <span id="descripcionError" class="error-message">Campo requerido</span>
+
+        <label for="amenidades">Amenidades:</label>
+        <input type="text" id="amenidades" name="amenidades">
+        <span id="amenidadesError" class="error-message">Campo requerido</span>
+
+        <label for="dias-semana">Días Disponibles:</label>
+        <input type="checkbox" id="todosLosDias" name="dias-semana" value="todos"> Todos los días<br>
+        <input type="checkbox" name="dias-semana" value="lunes"> Lunes<br>
+        <input type="checkbox" name="dias-semana" value="martes"> Martes<br>
+        <input type="checkbox" name="dias-semana" value="miércoles"> Miércoles<br>
+        <input type="checkbox" name="dias-semana" value="jueves"> Jueves<br>
+        <input type="checkbox" name="dias-semana" value="viernes"> Viernes<br>
+        <input type="checkbox" name="dias-semana" value="sábado"> Sábado<br>
+        <input type="checkbox" name="dias-semana" value="domingo"> Domingo<br>
+        <span id="diasError" class="error-message">Seleccione al menos un día</span>
+
+        <label for="horarioDesde">Horario Desde:</label>
+        <input type="time" id="horarioDesde" name="horarioDesde">
+        <label for="horarioHasta">Horario Hasta:</label>
+        <input type="time" id="horarioHasta" name="horarioHasta">
+        <span id="horarioError" class="error-message">Campo requerido</span>
+
+        <label for="precioHora">Precio por Hora:</label>
+        <input type="number" id="precioHora" name="precioHora">
+        <span id="precioHoraError" class="error-message">Campo requerido</span>
+
+        <!-- <label for="imagenes">Imágenes:</label>
+        <input type="file" id="imagenes" name="imagenes" multiple>
+        <span id="imagenesError" class="error-message">Campo requerido</span> -->
+
+
+        <!-- <button type="submit">Guardar Servicio</button> -->
+
+        
+        <div class="form-actions">
+            <button type="button" id="cancelButton">Cerrar</button>
+            <button type="submit" id="guardarServicio">Guardar Servicio</button>
+        </div>
+
+    </form>
+
+    <div id="notification" class="notification"></div>
+
+    <!-- <script src="./js/addServices.js"></script> -->
+    <script type="module" src="..\js\addServices.js"></script>
+
+</body>
+</html>

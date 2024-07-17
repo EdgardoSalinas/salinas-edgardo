@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Servicios del Proveedor</title>
+  <link rel="stylesheet" href="../css/servicioShop.css">
+</head>
+<body>
+
+   <header>
+    <div id="navbar-placeholder"></div>
+   </header>
+  
+   <main>
+
+  <div class="page-container">
+
+    <div class="service-container">
+      
+      <div id="serviceList"></div>
+      <div class="pagination">
+        <button id="prevPage">Anterior</button>
+        <span id="currentPage">1</span> / <span id="totalPages">1</span>
+        <button id="nextPage">Siguiente</button>
+      </div>
+    </div>
+    <div class="order-container">
+      <h2>Órdenes</h2>
+      <div id="orderList"></div>
+    </div>
+  </div>
+
+
+  <div id="appointmentModal" class="modal">
+    <div class="modal-content">
+      <span id="closeModal" class="close">&times;</span>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+
+  <div id="appointmentModalpp" class="paypal-modal ">
+  <div class="paypal-modal-content">
+    <span id="closeModalpp" class="paypal-close">&times;</span>
+    <div id="modalContentpp"></div>
+  </div>
+  </div>
+
+  <div>
+    <button id="closeButton" class="closeButton">Cerrar</button>
+  </div>
+
+  <!-- <div id="appointmentForm" >
+    <form id="forma>Cita">
+
+    </form>
+  </div> -->
+
+  <div id="paypal-button-container"></div>
+
+</main>
+
+  <script>
+    fetch('navbarG.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('navbar-placeholder').innerHTML = data;
+        });
+
+  </script>
+
+  <script src="https://www.paypal.com/sdk/js?client-id=AYwYDO3mUZuKKmbSWFOPJ6uLCoSWlLD2Pg6kbUn7AhmdvwKCyo6Uv8BsAIxMGAMBUNAvvoB-kvoYJXlg&currency=USD"></script>
+
+  <script type="module" src="..\js\servicioShop.js"></script>
+</body>
+</html>
